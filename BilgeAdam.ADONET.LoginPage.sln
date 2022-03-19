@@ -11,6 +11,8 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "BilgeAdam.Data", "BilgeAdam
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BilgeAdam.Common.Library", "BilgeAdam.Common.Library\BilgeAdam.Common.Library.csproj", "{7690506C-6A2C-41ED-8098-B0F872ED1674}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BilgeAdam.SqlParameter", "BilgeAdam.SqlParameter\BilgeAdam.SqlParameter.csproj", "{21FBFE5A-8932-48EB-A13B-5D086A1BB214}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -33,6 +35,10 @@ Global
 		{7690506C-6A2C-41ED-8098-B0F872ED1674}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{7690506C-6A2C-41ED-8098-B0F872ED1674}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{7690506C-6A2C-41ED-8098-B0F872ED1674}.Release|Any CPU.Build.0 = Release|Any CPU
+		{21FBFE5A-8932-48EB-A13B-5D086A1BB214}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{21FBFE5A-8932-48EB-A13B-5D086A1BB214}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{21FBFE5A-8932-48EB-A13B-5D086A1BB214}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{21FBFE5A-8932-48EB-A13B-5D086A1BB214}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

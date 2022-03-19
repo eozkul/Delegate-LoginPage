@@ -51,7 +51,7 @@ namespace BilgeAdam.ADONET.LoginPage
                 SecurityQuestionId = selectedQuestion.Id
             };
 
-            var result = service.AddNewUser(dto);
+            var result = service.AddNewUserWithSqlParameter(dto);
             if (result)
             {
                 MessageBox.Show("Hesabınız Oluşturuldu", "Başarılı", MessageBoxButtons.OK, MessageBoxIcon.Information);

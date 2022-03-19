@@ -30,14 +30,28 @@ namespace BilgeAdam.Data.Concretes
             return databaseManager.Execute(query);
         }
 
+        public bool AddNewUserWithSqlParameter(NewUserDto dto)
+        {
+            var hashPassword = dto.Password + ConstantStrings.PasswordKey;
+            var query = "INSERT INTO Users VALUES ( @FirstName, @LastName, @Email, @Password, @CreatedAt, @CreatedBy, @SecurityQuestionId, @Answer)";
+            return databaseManager.ExecuteWithParameter(query, new SqlParameter[] { 
+                new SqlParameter("@FirstName", dto.FirstName),
+                new SqlParameter("@LastName", dto.LastName),
+                new SqlParameter("@Email", dto.Email),
+                new SqlParameter("@Password", hashPassword.ComputeHash()),
+                new SqlParameter("@CreatedAt", DateTime.Now),
+                new SqlParameter("@CreatedBy", "Admin"),
+                new SqlParameter("@SecurityQuestionId", dto.SecurityQuestionId),
+                new SqlParameter("@Answer", dto.Answer),
+            });
+        }
+
         public bool CheckUser(CheckUserDto dto)
         {
             var hashPassword = dto.Password + ConstantStrings.PasswordKey;
             var query = $"SELECT Id FROM Users WHERE Email = '{dto.Email}' AND Password = '{hashPassword.ComputeHash()}'";
             return databaseManager.Any(query);
         }
-        //Deneme değişikliği
-        //Deneme değişikliği2
 
         public List<SecurityQuestionOptionDto> GetSercurityQuestions()
         {

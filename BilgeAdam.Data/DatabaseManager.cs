@@ -41,6 +41,16 @@ namespace BilgeAdam.Data
             return result > 0;
         }
 
+        public bool ExecuteWithParameter(string query, SqlParameter[] sqlParameters)
+        {
+            OpenConnection();
+            var command = new SqlCommand(query, connection);
+            command.Parameters.AddRange(sqlParameters);
+            var result = command.ExecuteNonQuery();
+            CloseConnection();
+            return result > 0;
+        }
+
         private void OpenConnection()
         {
             if (connection.State != ConnectionState.Open)
@@ -48,8 +58,6 @@ namespace BilgeAdam.Data
                 connection.Open();
             }
         }
-
-
 
         private void CloseConnection()
         {
