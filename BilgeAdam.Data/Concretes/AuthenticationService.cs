@@ -37,6 +37,7 @@ namespace BilgeAdam.Data.Concretes
             return databaseManager.Any(query);
         }
         //Deneme değişikliği
+        //Deneme değişikliği2
 
         public List<SecurityQuestionOptionDto> GetSercurityQuestions()
         {
