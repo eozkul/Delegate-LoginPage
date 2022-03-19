@@ -34,6 +34,7 @@
             this.label2 = new System.Windows.Forms.Label();
             this.btnSubmit = new System.Windows.Forms.Button();
             this.label3 = new System.Windows.Forms.Label();
+            this.btnRegister = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // txtEmail
@@ -89,11 +90,22 @@
             this.label3.TabIndex = 3;
             this.label3.Text = "Log-in";
             // 
+            // btnRegister
+            // 
+            this.btnRegister.Location = new System.Drawing.Point(713, 415);
+            this.btnRegister.Name = "btnRegister";
+            this.btnRegister.Size = new System.Drawing.Size(75, 23);
+            this.btnRegister.TabIndex = 4;
+            this.btnRegister.Text = "Kaydol";
+            this.btnRegister.UseVisualStyleBackColor = true;
+            this.btnRegister.Click += new System.EventHandler(this.btnRegister_Click);
+            // 
             // frm_Login
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.btnRegister);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.btnSubmit);
             this.Controls.Add(this.label2);
@@ -118,5 +130,6 @@
         private Label label2;
         private Button btnSubmit;
         private Label label3;
+        private Button btnRegister;
     }
 }

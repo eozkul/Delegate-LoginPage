@@ -10,4 +10,8 @@
     <PackageReference Include="System.Data.SqlClient" Version="4.8.3" />
   </ItemGroup>
 
+  <ItemGroup>
+    <ProjectReference Include="..\BilgeAdam.Common.Library\BilgeAdam.Common.Library.csproj" />
+  </ItemGroup>
+
 </Project>

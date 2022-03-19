@@ -22,6 +22,25 @@ namespace BilgeAdam.Data
             return result is not null; //result != null
         }
 
+        public TResult GetAll<TResult>(string tableName, Func<SqlDataReader, TResult> securityQuestionMapper)
+        {
+            OpenConnection();
+            var command = new SqlCommand($"SELECT * FROM {tableName}", connection);
+            var reader = command.ExecuteReader();
+            var result = securityQuestionMapper(reader);
+            CloseConnection();
+            return result;
+        }
+
+        public bool Execute(string query)
+        {
+            OpenConnection();
+            var command = new SqlCommand(query, connection);
+            var result = command.ExecuteNonQuery();
+            CloseConnection();
+            return result > 0;
+        }
+
         private void OpenConnection()
         {
             if (connection.State != ConnectionState.Open)
@@ -29,6 +48,8 @@ namespace BilgeAdam.Data
                 connection.Open();
             }
         }
+
+
 
         private void CloseConnection()
         {

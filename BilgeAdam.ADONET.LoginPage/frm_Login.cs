@@ -1,3 +1,4 @@
+using BilgeAdam.ADONET.LoginPage.Extensions;
 using BilgeAdam.Data.Abstractions;
 using BilgeAdam.Data.Concretes;
 using BilgeAdam.Data.Dtos;
@@ -26,10 +27,40 @@ namespace BilgeAdam.ADONET.LoginPage
             else
             {
                 MessageBox.Show("Bu bilgilerle oturum açýlamadý :(", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                this.txtEmail.Text = String.Empty;
-                this.txtPassword.Text = String.Empty;
+                this.txtEmail.Text = string.Empty;
+                this.txtPassword.Text = string.Empty;
             }
         }
+
+        private void btnRegister_Click(object sender, EventArgs e)
+        {
+            var frmRegister = new frmRegister(service);
+            this.Switch(frmRegister);
+            //if (reuslt == DialogResult.OK)
+            this.Show();
+        }
+
+        // SecurityQuestions adýnda bir tablo oluþturun. (Id, Questions(nvarchar(500)))
+        // User tablosunda SecurityQuestionId adýnda bir kolon (FK)
+        // User tablosunda Answer kolon (güvenlik sorusunun cevabý)(nvarchar(64))
+
+
+
+
+        // Register formu oluþturun. Kullanýcý bilgilerini alýn ve yeni bir kullanýcý insert edin
+        // Güvenlik sorularýný bir combobox'ta listeleyin, kullanýcýnýn seçtiði sorunun cevabýný alýn. ve insert edin.
+
+
+
+        // baseClass{ public string myProp {get; set;}}
+        // childClass : baseClass{biþeyler}
+        // var instance = new childClass()
+        // private void MyMethod(baseClass instance){..statements}
+        //MyMethod(instance)
+
+
+
+
 
         // Bir login sayfasý dizayný oluþturun.
         // Kullanýcý email ve password bilgilerini girsin
