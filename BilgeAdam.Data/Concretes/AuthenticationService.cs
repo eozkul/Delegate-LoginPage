@@ -36,6 +36,7 @@ namespace BilgeAdam.Data.Concretes
             var query = $"SELECT Id FROM Users WHERE Email = '{dto.Email}' AND Password = '{hashPassword.ComputeHash()}'";
             return databaseManager.Any(query);
         }
+        //Deneme değişikliği
 
         public List<SecurityQuestionOptionDto> GetSercurityQuestions()
         {
