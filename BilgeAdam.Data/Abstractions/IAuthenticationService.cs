@@ -11,5 +11,9 @@ namespace BilgeAdam.Data.Abstractions
         bool AddNewUser(NewUserDto dto);
 
         bool AddNewUserWithSqlParameter(NewUserDto dto);
+
+        UserQuestionDto GetUserByEmail(string email);
+
+        bool UpdateUserPassword(UpdateUserPasswordDto dto);
     }
 }
