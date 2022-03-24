@@ -18,6 +18,7 @@ namespace BilgeAdam.Events
             dtpBirthDate.MinDate = new DateTime(now.Year, now.Month, now.Day).AddYears(-70);
             dtpBirthDate.MaxDate = new DateTime(now.Year, now.Month, now.Day).AddYears(-18);
             grbMatch.Visible = false;
+            lstParents.SelectedIndex = -1;
         }
 
         private void LoadSeedData()
@@ -42,7 +43,14 @@ namespace BilgeAdam.Events
             foreach (var parent in parents)
             {
                 parent.onMatched += Parent_onMatched;
+                parent.onDisruptMatching += Parent_onDisruptMatching;
             }
+        }
+
+        private void Parent_onDisruptMatching(Parent self)
+        {
+            self.Spouse = null;
+            lstParents.SelectedIndex = -1;
         }
 
         private void Parent_onMatched(Parent self, Parent spouse)
@@ -52,6 +60,8 @@ namespace BilgeAdam.Events
 
         private void btnSave_Click(object sender, EventArgs e)
         {
+
+            
             var newParent = new Parent()
             {
                 FullName = txtName.Text,
@@ -80,8 +90,11 @@ namespace BilgeAdam.Events
             {
                 cmbParents.DataSource = new object[] { selected.Spouse };
                 cmbParents.Enabled = false;
+                btnMatch.Text = "Kaldýr";
                 return;
             }
+            btnMatch.Text = "Eþleþtir";
+            cmbParents.Enabled = true;
             cmbParents.DataSource = GetParent(selected).ToList();
         }
 
@@ -106,12 +119,19 @@ namespace BilgeAdam.Events
         {
             var self = lstParents.SelectedItem as Parent;
             var spouse = cmbParents.SelectedItem as Parent;
+            if (btnMatch.Text == "Kaldýr")
+            {
+                self.DisruptMatching(spouse);
+                return;
+            }
+
             if (spouse.FullName == "Seçiniz")
             {
                 MessageBox.Show("Lütfen bir eþ seçiniz");
                 return;
             }
             self.SetSpouse(spouse);
+            lstParents.SelectedIndex = -1;
         }
     }
 }
