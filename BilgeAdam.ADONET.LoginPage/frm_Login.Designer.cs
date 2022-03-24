@@ -35,6 +35,7 @@
             this.btnSubmit = new System.Windows.Forms.Button();
             this.label3 = new System.Windows.Forms.Label();
             this.btnRegister = new System.Windows.Forms.Button();
+            this.button1 = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // txtEmail
@@ -72,9 +73,9 @@
             // 
             // btnSubmit
             // 
-            this.btnSubmit.Location = new System.Drawing.Point(414, 256);
+            this.btnSubmit.Location = new System.Drawing.Point(284, 256);
             this.btnSubmit.Name = "btnSubmit";
-            this.btnSubmit.Size = new System.Drawing.Size(75, 23);
+            this.btnSubmit.Size = new System.Drawing.Size(205, 43);
             this.btnSubmit.TabIndex = 2;
             this.btnSubmit.Text = "Submit";
             this.btnSubmit.UseVisualStyleBackColor = true;
@@ -100,11 +101,23 @@
             this.btnRegister.UseVisualStyleBackColor = true;
             this.btnRegister.Click += new System.EventHandler(this.btnRegister_Click);
             // 
+            // button1
+            // 
+            this.button1.ForeColor = System.Drawing.Color.RosyBrown;
+            this.button1.Location = new System.Drawing.Point(321, 305);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(138, 23);
+            this.button1.TabIndex = 5;
+            this.button1.Text = "Parolamı Unuttum";
+            this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
+            // 
             // frm_Login
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.button1);
             this.Controls.Add(this.btnRegister);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.btnSubmit);
@@ -131,5 +144,6 @@
         private Button btnSubmit;
         private Label label3;
         private Button btnRegister;
+        private Button button1;
     }
 }
