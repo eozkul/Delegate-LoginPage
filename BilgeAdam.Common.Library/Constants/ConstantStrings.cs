@@ -8,6 +8,6 @@ namespace BilgeAdam.Common.Library.Constants
 {
     public static class ConstantStrings
     {
-        public static string PasswordKey = "bilgeadamapp1q2w3e4R!!xyz";
+        public const string PasswordKey = "bilgeadamapp1q2w3e4R!!xyz";
     }
 }
