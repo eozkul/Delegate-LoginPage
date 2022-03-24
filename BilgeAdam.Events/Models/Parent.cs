@@ -3,7 +3,7 @@
     public class Parent
     {
         public event MatchedHandler onMatched;
-
+        // DisruptMatchedHandler event olacak
         public string FullName { get; set; }
         public Gender Gender { get; set; }
         public DateTime BirthDate { get; set; }
